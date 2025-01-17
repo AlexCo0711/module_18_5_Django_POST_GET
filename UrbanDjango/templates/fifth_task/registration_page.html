@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация пользователя</title>
+</head>
+<body>
+    {% if error %}
+    <p>{{error}}</p>
+    {% endif %}
+    <h2>Страница регистрации</h2>
+<!--    Поля для ввода и подписи:-->
+<!--Для логина username с ограничением длины в 30 символов. Подпись: "Введите логин".-->
+<!--Для пароля password с ограничением длины не менее 8 символов. Подпись: "Введите пароль".-->
+<!--Для повтора пароля repeat_password с ограничением длины не менее 8 символов. Подпись: "Повторите пароль".-->
+<!--Для возраста age с ограничением длины в 3 символа. Подпись: "Введите свой возраст".-->
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Введите логин</label>
+        <input type="text" id="username" name="username" maxlength="30" required>
+        <label for="password">Введите пароль</label>
+        <input type=password id="password" name="password" minlength="8" required>
+        <label for="repeat_password">Повторите пароль</label>
+        <input type="text" id="repeat_password" name="repeat_password" minlength="8" required>
+        <label for="age">Ваш возраст</label>
+        <input type="text" id="age" name="age" maxlength="3" required>
+        <button>Отправить</button>
+    </form>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
