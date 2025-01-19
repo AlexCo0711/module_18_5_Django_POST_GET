@@ -2,10 +2,11 @@ from django.shortcuts import render
 from .forms import UserRegister
 from django.http import HttpResponse
 
+# Фейковые имена
+    users = ['userVasil', 'userIvan', 'userEgor']
+
 # Create your views here.
 def sign_up_by_django(request):
-    # Фейковые имена
-    users = ['userVasil', 'userIvan', 'userEgor']
     info = {}
 # получение данных из POST-запроса как в шаблоне
     if request.method == 'POST':
@@ -32,8 +33,6 @@ def sign_up_by_django(request):
 
 # обработка get-запроса как в шаблоне
 def sign_up_by_html(request):
-    # Фейковые имена
-    users = ['userVasil', 'userIvan', 'userEgor']
     info = {}
     if request.method == 'POST':
         username = request.POST.get('username')
