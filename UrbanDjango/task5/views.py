@@ -3,7 +3,7 @@ from .forms import UserRegister
 from django.http import HttpResponse
 
 # Фейковые имена
-    users = ['userVasil', 'userIvan', 'userEgor']
+users = ['userVasil', 'userIvan', 'userEgor']
 
 # Create your views here.
 def sign_up_by_django(request):
